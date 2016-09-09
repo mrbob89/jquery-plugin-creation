@@ -1,0 +1,1 @@
+# Easy jQuery plugin examples

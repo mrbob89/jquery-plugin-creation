@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        html {
+            padding: 0;
+            font-family: 'Open sans', sans-serif;
+        }
+        body {
+            padding: 0;
+        }
+        .stories {
+            font-size: 0;
+            margin-bottom: 50px;
+        }
+        .story {
+            display: inline-block;
+            vertical-align: top;
+            width: calc(30% - 40px);
+            height: auto;
+            font-size: 16px;
+            padding: 20px;
+            margin-right: 5%;
+        }
+        .story:last-child {
+            margin-right: 0 !important;
+        }
+        img {
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .img-title {
+            display: block;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="stories" id="stories-1">
+        <div class="story" style="background: #1abc9c;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam luctus vulputate. Donec sollicitudin nisi sit amet molestie fringilla. Quisque sollicitudin at felis et mattis. Phasellus semper, enim vel feugiat aliquam, orci metus dignissim justo, eleifend faucibus turpis lorem id ligula. Curabitur quis neque nec est suscipit feugiat eu vel elit. Proin gravida scelerisque eleifend. Aenean quis leo ut est sodales fringilla quis quis lacus. Praesent convallis non velit vel tincidunt. In hac habitasse platea dictumst.
+        </div>
+        <div class="story" style="background: #2980b9;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam luctus vulputate. Donec sollicitudin nisi sit amet molestie fringilla. Quisque sollicitudin at felis et mattis. Phasellus semper, enim vel feugiat aliquam, orci metus dignissim justo
+        </div>
+        <div class="story" style="background: #f39c12;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam luctus vulputate. Donec sollicitudin nisi sit amet molestie fringilla. Quisque sollicitudin at felis et mattis. Phasellus semper, enim vel feugiat aliquam, orci metus dignissim justo, eleifend faucibus turpis lorem id ligula. Curabitur quis neque nec est suscipit feugiat eu vel elit. Proin gravida scelerisque eleifend.
+        </div>
+    </div>
+
+    <div class="stories" id="stories-2">
+        <div class="story" style="background: #1abc9c;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam luctus vulputate. Donec sollicitudin nisi sit amet molestie fringilla. Quisque sollicitudin at felis et mattis. Phasellus semper, enim vel feugiat aliquam, orci metus dignissim justo, eleifend faucibus turpis lorem id ligula. Curabitur quis neque nec est suscipit feugiat eu vel elit. Proin gravida scelerisque eleifend. Aenean quis leo ut est sodales fringilla quis quis lacus. Praesent convallis non velit vel tincidunt. In hac habitasse platea dictumst.
+        </div>
+        <div class="story" style="background: #2980b9;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam luctus vulputate. Donec sollicitudin nisi sit amet molestie fringilla. Quisque sollicitudin at felis et mattis. Phasellus semper, enim vel feugiat aliquam, orci metus dignissim justo
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam luctus vulputate. Donec sollicitudin nisi sit amet molestie fringilla. Quisque sollicitudin at felis et mattis. Phasellus semper, enim vel feugiat aliquam, orci metus dignissim justo, eleifend faucibus turpis lorem id ligula. Curabitur quis neque nec est suscipit feugiat eu vel elit. Proin gravida scelerisque eleifend. Aenean quis leo ut est sodales fringilla quis quis lacus. Praesent convallis non velit vel tincidunt. In hac habitasse platea dictumst.
+        </div>
+        <div class="story" style="background: #f39c12;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer aliquam luctus vulputate. Donec sollicitudin nisi sit amet molestie fringilla. Quisque sollicitudin at felis et mattis. Phasellus semper, enim vel feugiat aliquam, orci metus dignissim justo, eleifend faucibus turpis lorem id ligula. Curabitur quis neque nec est suscipit feugiat eu vel elit. Proin gravida scelerisque eleifend.
+        </div>
+    </div>
+
+    <div class="photoes">
+        <img src="img/1.jpg" alt="Puppy" title="French bulog 1">
+        <img src="img/2.jpg" alt="Puppy" title="French bulog 2" class="unique">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="plugin.js"></script>
+    <script src="plugin2-in-pattern.js"></script>
+    <!-- <script src="plugin2.js"></script> -->
+    <script>
+        //Call in the document
+        $(document).ready(function() {
+            'use strict';
+
+            //Call plugin
+            $('#stories-1 .story').equalizeHeight();
+            $('#stories-2 .story').equalizeHeight();
+
+            $('.photoes img').imageTitle({
+                'position': false,
+                'wrapperClass': 'our-wrapper'
+            })
+                .css('border', '15px solid #000')
+                .changePosition();
+        });
+    </script>
+</body>
+</html>
